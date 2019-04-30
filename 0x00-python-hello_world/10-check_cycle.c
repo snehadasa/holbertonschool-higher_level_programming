@@ -18,6 +18,8 @@ int check_cycle(listint_t *list)
 	while (current->next)
 	{
 		temp = list;
+		if (current == current->next)
+			return (1);
 		while (temp != current)
 		{
 			if (temp == current->next)
