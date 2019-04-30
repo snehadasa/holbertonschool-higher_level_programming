@@ -7,28 +7,23 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *current, *temp;
+	listint_t *pointer1, *pointer2;
 
-	current = list;
-	if (current == NULL)
-	{
+	if (list == NULL || list->next == NULL || list->next->next == NULL)
 		return (0);
-	}
+	pointer1 = list->next;
+	pointer2 = list->next->next;
 
-	while (current->next)
+	while (pointer2 && pointer1)
 	{
-		temp = list;
-		if (current == current->next)
+		if (pointer2 == pointer1)
 			return (1);
-		while (temp != current)
+		pointer1 = pointer1->next;
+		pointer2 = pointer2->next;
+		if (pointer2)
 		{
-			if (temp == current->next)
-			{
-				return (1);
-			}
-			temp = temp->next;
+			pointer2 = pointer2->next;
 		}
-		current = current->next;
 	}
 	return (0);
 }
