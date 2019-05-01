@@ -4,6 +4,8 @@ number = random.randint(-10000, 10000)
 
 
 def lastDigit(num):
+    if num < 0:
+        num = -num
     return num % 10
 
 last_Digit = lastDigit(number)
