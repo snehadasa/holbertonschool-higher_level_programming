@@ -9,6 +9,8 @@ def lastDigit(num):
     return num % 10
 
 last_Digit = lastDigit(number)
+if number < 0:
+    last_Digit = -last_Digit
 if last_Digit > 5:
     print("Last digit of {} is "
           "{} and is greater than 5".format(number, last_Digit))
