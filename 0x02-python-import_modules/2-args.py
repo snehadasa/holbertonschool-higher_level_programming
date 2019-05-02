@@ -5,9 +5,9 @@ if __name__ == "__main__":
     if num_av == 0:
         print("{} arguments.".format(num_av))
     elif num_av == 1:
-        print("{} arguments:".format(num_av))
+        print("{} argument:".format(num_av))
     else:
         print("{} arguments:".format(num_av))
     if num_av > 0:
         for i in range(1, num_av + 1):
-            print("{}: {}".format(i, argv[i]))
+            print("{:d}: {}".format(i, argv[i]))
