@@ -49,11 +49,11 @@ listint_t *reverse_listint(listint_t **head)
 }
 
 /**
- * free_listint - frees the linked list from memory
+ * free_list - frees the linked list from memory
  * @head: The pointer to the linked list
  * Return: nothing.
  */
-void free_listint(listint_t *head)
+void free_list(listint_t *head)
 {
 	listint_t *temp;
 
@@ -82,12 +82,12 @@ int is_palindrome(listint_t **head)
 	{
 		if (temp1->n != temp2->n)
 		{
-			free_listint(temp2);
+			free_list(temp2);
 			return (0);
 		}
 		temp1 = temp1->next;
 		temp2 = temp2->next;
 	}
-	free_listint(temp2);
+	free_list(temp2);
 	return (1);
 }
