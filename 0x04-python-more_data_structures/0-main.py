@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-square_matrix_simple = __import__('0-square_matrix_simple').square_matrix_simple
+square_matrix_simple2 = __import__('0-square_matrix_simple2').square_matrix_simple2
 
 matrix = [
     [1, 2, 3],
@@ -7,7 +7,7 @@ matrix = [
     [7, 8, 9]
 ]
 
-new_matrix = square_matrix_simple(matrix)
+new_matrix = square_matrix_simple2(matrix)
 print(new_matrix)
 print(matrix)
 

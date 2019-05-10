@@ -7,8 +7,8 @@ def roman_to_int(roman_string):
     value_prev = dic.get(roman_string[0])
     for i in roman_string:
         if value_prev < dic.get(i):
-            dec -= dic.get(i)
+            dec += dic.get(i) - value_prev * 2
         else:
             value_prev = dic.get(i)
             dec += dic.get(i)
-    return dec if dec > 0 else -dec
+    return dec
