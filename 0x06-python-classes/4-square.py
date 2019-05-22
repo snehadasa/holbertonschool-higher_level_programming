@@ -9,11 +9,11 @@ class Square():
             self._Square__size = size
 
     def area(self):
-        return self.size ** 2
+        return self._Square__size ** 2
 
     @property
     def size(self):
-        return self.size
+        return self._Square__size
 
     @size.setter
     def size(self, value):
@@ -22,4 +22,4 @@ class Square():
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.size = value
+            self._Square__size = value
