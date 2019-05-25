@@ -10,75 +10,72 @@ Import function from module:
 
 Test:
 
-	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipisci	ng elit. \
-	Quonam modo? Utrum igitur tibi litteram videor an totas paginas commover	e? \
-	Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illu	d: \
-	Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupidita	tum \
-	rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a D	ipylo \
-	stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suu	m \
-	cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio 	\
-	beatiorem! Iam ruinas videres""")
+	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
+	<BLANKLINE>
 	Quonam modo?
-
+	<BLANKLINE>
 	Utrum igitur tibi litteram videor an totas paginas commovere?
-
+	<BLANKLINE>
 	Non autem hoc:
-
+	<BLANKLINE>
 	igitur ne illud quidem.
-
+	<BLANKLINE>
 	Fortasse id optimum, sed ubi illud:
-
+	<BLANKLINE>
 	Plus semper voluptatis?
-
+	<BLANKLINE>
 	Teneo, inquit, finem illi videri nihil dolere.
-
-	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupidita	tum rationi oboediens.
-
+	<BLANKLINE>
+	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+	<BLANKLINE>
 	Si id dicis, vicimus.
-
+	<BLANKLINE>
 	Inde sermone vario sex illa a Dipylo stadia confecimus.
-
+	<BLANKLINE>
 	Sin aliud quid voles, postea.
-
+	<BLANKLINE>
 	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-
+	<BLANKLINE>
 	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
 Test:
 
 	>>> text_indentation("Hello World.")
 	Hello World.
-
+	<BLANKLINE>
 
 Test:
 
 	>>> text_indentation("I am: Sneha. I am from India!")
 	I am:
-
+	<BLANKLINE>
 	Sneha.
-
+	<BLANKLINE>
 	I am from India!
 
 Test:
 
 	>>> text_indentation(". ? :")
 	.
-
+	<BLANKLINE>
 	?
-
+	<BLANKLINE>
 	:
-
+	<BLANKLINE>
 
 Test:
 
 	>>> text_indentation("Happy\n\nWorld!")
 	Happy
-
+	<BLANKLINE>
 	World!
 
 Test:
 
-
+	>>> text_indentation(2)
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-pyth	on-test_driven_development/5-text_indentation.py", line 14, in text_inde	ntation
+		raise TypeError("text must be a string")
+	TypeError: text must be a string

@@ -17,4 +17,4 @@ def text_indentation(text):
 		trim_spaces(st)
 		print("")
 		print("")
-		trim_spaces(lst[-1])
+	trim_spaces(lst[-1])
