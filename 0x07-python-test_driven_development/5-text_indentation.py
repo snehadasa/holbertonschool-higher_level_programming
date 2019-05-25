@@ -10,9 +10,11 @@ def trim_spaces(string):
     print(string[i:], end="")
 
 def text_indentation(text):
-    lst = text.replace('.','.@#$').replace('?','?@#$').replace(':',':@#$').split('@#$')
-    for st in lst[:-1]:
-        trim_spaces(st)
-        print("")
-        print("")
-    trim_spaces(lst[-1])
+	if not isinstance(text, str):
+		raise TypeError("text must be a string")
+	lst = text.replace('.','.@#$').replace('?','?@#$').replace(':',':@#$').split('@#$')
+	for st in lst[:-1]:
+		trim_spaces(st)
+		print("")
+		print("")
+		trim_spaces(lst[-1])

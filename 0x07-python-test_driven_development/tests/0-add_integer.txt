@@ -91,11 +91,3 @@ both strings:
 	  File "/home/sneha/holbertonschool-higher_level_programming/0x07-python	-test_driven_development/0-add_integer.py", line 4, in add_integer
 		raise TypeError("a must be an integer")
 	TypeError: a must be an integer
-
-more than two arguments:
-
-	>>> add_integer(3, 5, 7)
-	Traceback (most recent call last):
-	  File "<stdin>", line 1, in <module>
-	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 we	re given
-
