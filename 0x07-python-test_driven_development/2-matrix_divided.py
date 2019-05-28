@@ -1,5 +1,18 @@
 #!/usr/bin/python3
+"""Module for matrix_divided"""
+
+
 def matrix_divided(matrix, div):
+    """Divide elements of matrix by div.
+
+    matrix: list of lists
+    div: number to divide matrix.
+
+    Return: list of lists(a new matrix)
+
+    Raises: TypeError and ZeroDivisionError
+    """
+
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if div == 0:
