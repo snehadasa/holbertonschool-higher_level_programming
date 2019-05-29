@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Rectangle class that defines a rectangle
+with variables width and height"""
+
 class Rectangle():
+    """contains area, perimeters, __str__ (object), getters
+    & setters.initialize private variables."""
     def __init__(self, width = 0, height = 0):
         self.width = width
         self.height = height
