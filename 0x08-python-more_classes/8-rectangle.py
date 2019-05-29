@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 class Rectangle():
+    """contains area, perimeters, __str__ & __repr__(object),
+     initialising public variables((instances and print_symbol)),
+     getters & setters, static methods.initialize private variables."""
     number_of_instances = 0
     print_symbol = '#'
 
