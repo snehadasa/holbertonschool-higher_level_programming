@@ -2,13 +2,14 @@
 """Rectangle class that defines a rectangle
 with variables width and height"""
 
+
 class Rectangle():
     """contains getters and setters.
     initialize private variables."""
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         return self.__width

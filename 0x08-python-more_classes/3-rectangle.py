@@ -2,10 +2,11 @@
 """Rectangle class that defines a rectangle
 with variables width and height"""
 
+
 class Rectangle():
     """contains area, perimeters, __str__ (object), getters
     & setters.initialize private variables."""
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
@@ -17,7 +18,7 @@ class Rectangle():
             return 0
         else:
             return self.__width * 2 + self.__height * 2
-    
+
     @property
     def width(self):
         return self.__width
