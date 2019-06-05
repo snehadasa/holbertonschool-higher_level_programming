@@ -15,17 +15,3 @@ Test:
 	>>> bg.integer_validator("my_int", 12)
 
 	>>> bg.integer_validator("width", 89)
-
-	>>> bg.integer_validator("name", "John")
-	Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-      File "/home/sneha/holbertonschool-higher_level_programming/0x0A-pyt
-    on-inheritance/7-base_geometry.py", line 16, in integer_validator
-            raise TypeError("{} must be an integer".format(name))
-    TypeError: name must be an integer
-
-	>>> bg.integer_validator("age", 0)
-
-	>>> bg.integer_validator("distance", -4)
-
-
