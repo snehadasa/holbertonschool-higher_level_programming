@@ -3,7 +3,8 @@
 
 
 def number_of_lines(filename=""):
-    with open(filename) as myFile:
-        for i, l in enumerate(myFile):
-            pass
-    return i + 1
+    i = 0
+    with open(filename, encoding='utf-8') as myFile:
+        for s in myFile:
+            i += 1
+    return i
