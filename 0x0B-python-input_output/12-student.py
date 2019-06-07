@@ -15,4 +15,4 @@ class Student():
         for i in attrs:
             if i in self.__dict__:
                 result[i] = self.__dict__[i]
-                return result
+        return result
