@@ -8,11 +8,11 @@ class Rectangle(Base):
     """class Rectangle that has width and height."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -30,7 +30,7 @@ class Rectangle(Base):
     def height(self):
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -42,7 +42,7 @@ class Rectangle(Base):
     def x(self):
         return self.__x
 
-    @width.setter
+    @x.setter
     def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
@@ -54,7 +54,7 @@ class Rectangle(Base):
     def y(self):
         return self.__y
 
-    @width.setter
+    @y.setter
     def y(self, value):
         if type(value) != int:
             raise TypeError("y must be an integer")
@@ -103,3 +103,7 @@ class Rectangle(Base):
                 self.__x = kwargs["x"]
             if key is "y":
                 self.__y = kwargs["y"]
+
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
