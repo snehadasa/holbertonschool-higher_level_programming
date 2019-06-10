@@ -48,3 +48,9 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if key is "y":
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        dic = {}
+        for key, value in self.__dict__.items():
+            dic[key.split("__")[-1]] = value
+        return dic
