@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """module Rectangle that inherits from base"""
 
-from models.base import base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -68,10 +68,10 @@ class Rectangle(Base):
     def display(self):
         for i in range(self.__y):
             print()
-        for j in range(self.__width):
-            for n in range(self.__x):
-                print(" ", end="")
-            else:
+        for i in range(self.__height):
+            for j in range(self.__x):
+                print("", end=" ")
+            for j in range(self.__width):
                 print("#", end="")
             print()
 
@@ -79,5 +79,27 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                  self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
-
+    def update(self, *args, **kwargs):
+        if len(args) != 0 and args:
+            if (len(args) > 0):
+                self.id = args[0]
+            if (len(args) > 1):
+                self.__width = args[1]
+            if (len(args) > 2):
+                self.__height = args[2]
+            if (len(args) > 3):
+                self.__x = args[3]
+            if (len(args) > 4):
+                self.__y = args[4]
+            return
+        for key in kwargs:
+            if key is "id":
+                self.id = kwargs["id"]
+            if key is "width":
+                self.__width = kwargs["width"]
+            if key is "height":
+                self.__height = kwargs["height"]
+            if key is "x":
+                self.__x = kwargs["x"]
+            if key is "y":
+                self.__y = kwargs["y"]
