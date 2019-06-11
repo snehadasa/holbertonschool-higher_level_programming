@@ -39,8 +39,29 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        l = []
-        if json_string is None or json_string == []:
-            return l
-        l.append(json_strin)
-        return l
+        if json_string is None or json_string is "":
+            return []
+        if type(json_string) != str:
+            raise TypeError("json_string must be a string")
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy_instance = 0
+        if (cls.__name__) is "Square":
+            dummy_instance = cls(5)
+        elif (cls.__name__) is "Rectangle":
+            dummy_instance = cls(5, 8)
+        else:
+            raise TypeError("cls should be either Square or Rectangle")
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        res = []
+        with open(str(cls.__name__) + ".json", "r") as myFile:
+            list_obj = cls.from_json_string(myFile.read())
+            for list_row in list_obj:
+                res.append(cls.create(**list_row))
+            return res

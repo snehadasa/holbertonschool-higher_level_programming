@@ -40,13 +40,13 @@ class Square(Rectangle):
                 self.y = args[3]
             return
         for key in kwargs:
-            if key is "id":
+            if key == "id":
                 self.id = kwargs["id"]
-            if key is "size":
+            if key == "size":
                 self.size = kwargs["size"]
-            if key is "x":
+            if key == "x":
                 self.x = kwargs["x"]
-            if key is "y":
+            if key == "y":
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
