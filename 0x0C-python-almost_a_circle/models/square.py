@@ -50,7 +50,4 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        dic = {}
-        for key, value in self.__dict__.items():
-            dic[key.split("__")[-1]] = value
-        return dic
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
