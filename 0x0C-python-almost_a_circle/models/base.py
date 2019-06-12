@@ -8,6 +8,7 @@ class Base():
     """Base class"""
 
     __nd_objects = 0
+
     def __init__(self, id=None):
         """initialising base"""
         if id is not None:
@@ -21,21 +22,25 @@ class Base():
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         if type(list_dictionaries) != list:
-            raise TypeError("list_dictionaries must be a list")
+            raise TypeError("list_dictionaries must be a list of dictionaries")
+        for k in list_dictionaries:
+            if type(k) != dict:
+                raise TypeError("list_dictionaries must be a"
+                                " list of dictionaries")
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        res = []
         with open(str(cls.__name__) + ".json", "w+") as myFile:
             if list_objs is None:
-                myFile.write(Base.to_json_string([]))
+                myFile.write(Base.to_json_string(res))
                 return
             if type(list_objs) != list and list_objs is not None:
                 raise TypeError("list_objs must be a list")
-            l = []
             for base_obj in list_objs:
-                l.append(base_obj.to_dictionary())
-            return myFile.write(Base.to_json_string(l))
+                res.append(base_obj.to_dictionary())
+            return myFile.write(Base.to_json_string(res))
 
     @staticmethod
     def from_json_string(json_string):
