@@ -16,10 +16,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width property"""
+
         return self.__width
 
     @width.setter
     def width(self, value):
+        """property setter"""
+
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -28,10 +32,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height property"""
+
         return self.__height
 
     @height.setter
     def height(self, value):
+        """property setter"""
+
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -40,10 +48,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x property"""
+
         return self.__x
 
     @x.setter
     def x(self, value):
+        """property setter"""
+
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -52,10 +64,14 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y property"""
+
         return self.__y
 
     @y.setter
     def y(self, value):
+        """property setter"""
+
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -63,9 +79,14 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """area contains
+        width and height"""
+
         return self.__width * self.__height
 
     def display(self):
+        """display the rectangle with the symbol #"""
+
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -76,10 +97,16 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """str representation of rectangle"""
+
         return '[Rectangle] ({}) {}/{} - {}/{}".format(self.id,'
     'self.__x, self.__y, self.__width, self.__height)'
 
     def update(self, *args, **kwargs):
+        """updating with args and kwargs.
+        *args - all the arguments.
+        **kwargs - entire dic"""
+
         if len(args) != 0 and args:
             if (len(args) > 0):
                 self.id = args[0]
@@ -105,5 +132,7 @@ class Rectangle(Base):
                 self.__y = kwargs["y"]
 
     def to_dictionary(self):
+        """return dictionary representation"""
+
         return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
