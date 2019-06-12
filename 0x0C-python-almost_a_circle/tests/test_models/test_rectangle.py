@@ -56,7 +56,6 @@ class test_rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1 = Rectangle(1, 2, 3, 4, 5, 6, 7, 8)
 
-
     def test_no_arguments(self):
         """tests for passing no arguments"""
 
