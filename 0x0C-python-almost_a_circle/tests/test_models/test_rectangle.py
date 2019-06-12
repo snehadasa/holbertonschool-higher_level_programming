@@ -2,6 +2,8 @@
 """module for unittest"""
 
 import unittest
+import sys
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -9,103 +11,81 @@ from models.square import Square
 
 class test_rectangle(unittest.TestCase):
 
-    def test_id(self):
-        """test for id"""
+    def test_nb(self):
+        """test for nb"""
 
-        b1 = Base(1)
-        self.assertEqual(b1.id, 1)
+        Base._Base__nb_objects = 0
 
-        b2 = Base(2)
-        self.assertEqual(b2.id, 2)
+    def test_for_instances(self):
+        """test for instances"""
 
-    def test_for_0(self):
-        """test for 0 base"""
+    r1 = Rectangle(5, 2)
 
-        b3 = Base(0)
-        self.assertEqual(b3.id, 0)
+    def test_for_one_parameter(self):
+        """test for one parameter"""
 
-    def test_for_higher_base(self):
-        """test for higher value"""
-
-        b4 = Base(12)
-        self.assertEqual(b4.id, 12)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(7)
 
     def test_for_string(self):
         """test for string"""
 
-        b5 = Base("holberton")
-        self.assertEqual(b5.id, "holberton")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("holberton")
 
     def test_for_decimal(self):
-        """test for decimal base"""
+        """test for decimal one argument"""
 
-        b6 = Base(3.5)
-        self.assertEqual(b6.id, 3.5)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("3.6")
 
     def test_for_negative(self):
-        """test for negative base"""
+        """test for negative """
 
-        b7 = Base(-8)
-        self.assertEqual(b7.id, -8)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-7, -1)
 
-    def test_type_instance(self):
-        """test for type and instance"""
+    def test_valid_arguments(self):
+        """test for valid arguments"""
 
-        b9 = Base()
-        self.assertTrue(isinstance(b9, Base))
-        self.assertEqual(type(b9), Base)
+        r1 = Rectangle(1, 2, 3, 4, 5)
 
-    def test_tojsonstring_int(self):
+    def test_passing_more_args(self):
+        """tests for passing more arguments"""
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, 3, 4, 5, 6, 7, 8)
+
+
+    def test_no_arguments(self):
+        """tests for passing no arguments"""
+
+        with self.assertRaises(TypeError):
+            r1 = Rectangle()
+
+    def test_for_unknown_args(self):
+        """tests for passing unknown argument"""
+
+        with self.assertRaises(NameError):
+            r1 = Rectangle(holberton)
+
+    def test_for_floats(self):
         """tests for error messages of json string"""
 
-        with self.assertRaises(TypeError) as f:
-            Base.to_json_string(19)
-        self.assertEqual("list_dictionaries must be a list of dictionaries",
-                         str(f.exception))
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1.3, 6.8, 7, 9, 2)
 
-    def test_tojsonstring_string(self):
-        """tests for error messages of json string"""
+    def test_passing_none(self):
+        """test for passing none for arguments"""
 
-        with self.assertRaises(TypeError) as f:
-            Base.to_json_string("holberton")
-        self.assertEqual("list_dictionaries must be a list of dictionaries",
-                         str(f.exception))
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(None, 23)
 
-    def test_tojsonstring_invalid_list(self):
-        """tests for error messages of json string"""
+    def test_for_area(self):
+        """test for area of rectangle"""
 
-        with self.assertRaises(TypeError) as f:
-            Base.to_json_string([1, 2, 4, 7])
-        self.assertEqual("list_dictionaries must be a list of dictionaries",
-                         str(f.exception))
-
-    def test_tojsonstring_set(self):
-        """tests for error messages of json string"""
-
-        with self.assertRaises(TypeError) as f:
-            Base.to_json_string({1, 2})
-        self.assertEqual("list_dictionaries must be a list of dictionaries",
-                         str(f.exception))
-
-    def test_tojsonstring_valid_dict(self):
-        """test for valid dict"""
-
-        dic = {'x': 3, 'y': 7, 'width': 11}
-        json_dictionary = Base.to_json_string([dic])
-        self.assertTrue(isinstance(dic, dict))
-        self.assertTrue(isinstance(json_dictionary, str))
-        self.assertEqual(json_dictionary, '[{"x": 3, "y": 7, "width": 11}]')
-
-    def test_savetofile_valid(self):
-        """test for valid save to file"""
-
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        Rectangle.save_to_file([r1, r2])
-        res = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7},' +
-               ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
-        with open("Rectangle.json", "r") as f:
-            self.assertEqual(len(f.read()), len(res))
+        r1 = Rectangle(8, 7, 0, 0, 56)
+        self.assertEqual(r1.area(), 56)
 
     if __name__ == "__main__":
         unittest.main()
