@@ -76,8 +76,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                 self.__x, self.__y, self.__width, self.__height)
+        return '[Rectangle] ({}) {}/{} - {}/{}".format(self.id,'
+    'self.__x, self.__y, self.__width, self.__height)'
 
     def update(self, *args, **kwargs):
         if len(args) != 0 and args:
@@ -105,5 +105,5 @@ class Rectangle(Base):
                 self.__y = kwargs["y"]
 
     def to_dictionary(self):
-                return {'x': self.x, 'y': self.y, 'id': self.id,
+        return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
