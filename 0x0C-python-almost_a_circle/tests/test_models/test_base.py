@@ -48,15 +48,8 @@ class test_base(unittest.TestCase):
         b7 = Base(-8)
         self.assertEqual(b7.id, -8)
 
-    def test_type_instance(self):
-        """test for type and instance"""
-
-        b9 = Base()
-        self.assertTrue(isinstance(b9, Base))
-        self.assertEqual(type(b9), Base)
-
     def test_tojsonstring_int(self):
-        """tests for error messages of json string"""
+        """tests for single argument passed"""
 
         with self.assertRaises(TypeError) as f:
             Base.to_json_string(19)
@@ -64,7 +57,7 @@ class test_base(unittest.TestCase):
                          str(f.exception))
 
     def test_tojsonstring_string(self):
-        """tests for error messages of json string"""
+        """tests for passing of a string"""
 
         with self.assertRaises(TypeError) as f:
             Base.to_json_string("holberton")
@@ -72,7 +65,7 @@ class test_base(unittest.TestCase):
                          str(f.exception))
 
     def test_tojsonstring_invalid_list(self):
-        """tests for error messages of json string"""
+        """tests for passing a list"""
 
         with self.assertRaises(TypeError) as f:
             Base.to_json_string([1, 2, 4, 7])
@@ -80,7 +73,7 @@ class test_base(unittest.TestCase):
                          str(f.exception))
 
     def test_tojsonstring_set(self):
-        """tests for error messages of json string"""
+        """tests for passing a set"""
 
         with self.assertRaises(TypeError) as f:
             Base.to_json_string({1, 2})
