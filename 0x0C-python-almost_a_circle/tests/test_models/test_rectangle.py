@@ -2,8 +2,6 @@
 """module for unittest"""
 
 import unittest
-import sys
-from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
