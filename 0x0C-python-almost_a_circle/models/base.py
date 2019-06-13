@@ -65,10 +65,13 @@ class Base():
     @classmethod
     def load_from_file(cls):
         res = []
-        with open(str(cls.__name__) + ".json", "r") as myFile:
-            if myFile is None:
+        try:
+            with open(str(cls.__name__) + ".json", "r") as myFile:
+                if myFile is None:
+                    return res
+                list_obj = cls.from_json_string(myFile.read())
+                for list_row in list_obj:
+                    res.append(cls.create(**list_row))
                 return res
-            list_obj = cls.from_json_string(myFile.read())
-            for list_row in list_obj:
-                res.append(cls.create(**list_row))
+        except FileNotFoundError:
             return res
