@@ -8,7 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class test_rectangle(unittest.TestCase):
+class test_square(unittest.TestCase):
 
     def test_for_instances(self):
         """test for instances"""
