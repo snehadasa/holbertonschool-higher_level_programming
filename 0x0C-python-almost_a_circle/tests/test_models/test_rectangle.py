@@ -2,6 +2,7 @@
 """module for unittest"""
 
 import unittest
+import sys
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -12,12 +13,12 @@ class test_rectangle(unittest.TestCase):
     def test_nb(self):
         """test for nb"""
 
-        Base._Base__nb_objects = 0
+        Base.__nb_objects = 0
 
     def test_for_instances(self):
         """test for instances"""
 
-    r1 = Rectangle(5, 2)
+        r1 = Rectangle(5, 2)
 
     def test_for_one_parameter(self):
         """test for one parameter"""
@@ -83,6 +84,11 @@ class test_rectangle(unittest.TestCase):
 
         r1 = Rectangle(8, 7, 0, 0, 56)
         self.assertEqual(r1.area(), 56)
+
+    def test_for_valid_display(self):
+        """test for valid display"""
+
+        r1 = Rectangle(2, 3, 2, 2)
 
     if __name__ == "__main__":
         unittest.main()
