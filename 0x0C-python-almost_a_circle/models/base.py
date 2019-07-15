@@ -2,6 +2,8 @@
 """module for base class"""
 
 import json
+import csv
+import turtle
 
 
 class Base():
@@ -75,3 +77,16 @@ class Base():
                 return res
         except FileNotFoundError:
             return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        res = []
+        with open()
+
+    @classmethod
+    def load_from_file_csv(cls):
+
+    @classmethod:
+    def draw(list_rectangles, list_squares):
+
+
