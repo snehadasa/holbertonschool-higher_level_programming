@@ -1,0 +1,2 @@
+--script to crestea a table in current database in MySQL server
+--script to crestea a table in current database in MySQL server

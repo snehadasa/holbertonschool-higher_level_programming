@@ -1,0 +1,2 @@
+--script that lists all records of the table of the database
+--script that lists all records of the table of the database

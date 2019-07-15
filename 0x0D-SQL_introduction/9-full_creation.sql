@@ -1,0 +1,2 @@
+--script to create a table in database in MySQL and to add multiple rows
+--script to create a table in database in MySQL and to add multiple rows
