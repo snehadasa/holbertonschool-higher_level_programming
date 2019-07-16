@@ -1,0 +1,2 @@
+-- script that creates the MySQL server user 
+-- script that creates the MySQL server user 

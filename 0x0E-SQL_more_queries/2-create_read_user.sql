@@ -1,0 +1,2 @@
+-- script that creates the database and the user
+-- script that creates the database and the user

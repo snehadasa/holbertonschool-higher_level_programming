@@ -1,0 +1,2 @@
+-- script that lists all privileges of the MySQL users
+-- script that lists all privileges of the MySQL users
