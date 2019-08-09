@@ -4,6 +4,6 @@ characters written"""
 
 
 def append_write(filename="", text=""):
-     with open(filename, mode = 'a', encoding='utf-8') as myFile:
-         s = myFile.write(text)
-         return s
+    with open(filename, mode='a', encoding='utf-8') as myFile:
+        s = myFile.write(text)
+        return s
