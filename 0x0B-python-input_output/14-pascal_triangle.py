@@ -2,10 +2,7 @@
 def pascal_triangle(n):
     if n <= 0:
         return ""
-<<<<<<< HEAD
-=======
 
->>>>>>> df05daeb7b7fcfb5d52ad97d8f9fdc93265d0e90
     result = [[1]]
     for i in range(1, n):
         temp = [1]
