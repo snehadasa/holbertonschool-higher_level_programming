@@ -11,10 +11,10 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
     cur = db.cursor()
     cur.execute("""SELECT cities.name
-                FROM states
-                JOIN cities
-                ON cities.state_id = states.id
-                WHERE states.name = %s;""", (argv[4],))
+                FROM cities
+                JOIN states
+                ON state_id = states.id
+                WHERE states.name LIKE BINARY %s;""", (argv[4],))
     states = cur.fetchall()
     for length, state in enumerate(states):
         if length < len(states) - 1:
