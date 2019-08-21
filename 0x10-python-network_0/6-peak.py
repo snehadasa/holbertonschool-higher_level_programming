@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """function that finds a peak in a list of unsorted integers."""
 
+
 def find_peak_high(arr, l, h, n):
     """ Find a peak"""
     m = l + (h - l)//2
@@ -13,6 +14,7 @@ def find_peak_high(arr, l, h, n):
         return find_peak_high(arr, l, (m - 1), n)
     else:
         return find_peak_high(arr, (m + 1), h, n)
+
 
 def find_peak(list_of_integers):
     """To find peak"""
