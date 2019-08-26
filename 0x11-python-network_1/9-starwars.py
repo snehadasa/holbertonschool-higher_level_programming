@@ -9,7 +9,7 @@ from sys import argv
 
 if __name__ == "__main__":
     req = requests.get('https://swapi.co/api/people/?search={}'
-                       .format(argv[1]))
-    print("Number of results: {}".format(req.json()["count"]))
-    for res in req.json()["results"]:
+                       .format(argv[1])).json()
+    print("Number of results: {}".format(req.get("count")))
+    for res in req.get("results"):
         print(res["name"])
