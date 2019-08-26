@@ -15,7 +15,7 @@ if __name__ == "__main__":
         q = ""
     try:
         req = requests.post('http://0.0.0.0:5000/search_user',
-                           data={'q': q}).json()
+                            data={'q': q}).json()
         if 'id' in req and 'name' in req:
             print("[{}] {}".format(req['id'], req['name']))
         else:
