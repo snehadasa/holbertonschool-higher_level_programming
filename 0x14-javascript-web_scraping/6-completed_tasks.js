@@ -5,7 +5,8 @@ request.get(process.argv[2], function (err, response, body) {
   if (err) throw err;
   const dic = {};
   const b = JSON.parse(body);
-  for (const t of b) {
+  for (let i in b) {
+    let t = b[i]
     if (t.completed) {
       if (t.userId in dic) {
         dic[t.userId] += 1;
